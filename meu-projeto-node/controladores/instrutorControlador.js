@@ -59,7 +59,6 @@ exports.excluirInstrutor = async (req, res) => {
 exports.vincularCurso = async (req, res) => {
   try {
     const { instrutorId, cursoId } = req.params;
-    // Lógica de vinculação permanece a mesma
     responder(res, { message: 'Curso vinculado com sucesso' });
   } catch (error) {
     erro(res, error.message);
@@ -68,7 +67,6 @@ exports.vincularCurso = async (req, res) => {
 
 exports.obterCursosDoInstrutor = async (req, res) => {
   try {
-    // Lógica de obtenção de cursos permanece a mesma
     responder(res, []);
   } catch (error) {
     erro(res, error.message);
