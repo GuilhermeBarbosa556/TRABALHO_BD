@@ -1,7 +1,6 @@
 const { getBanco } = require('./banco');
 const { ObjectId } = require('mongodb');
 
-// Funções de formatação reutilizáveis
 const formatarCPF = cpf => cpf?.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') || '';
 const formatarCEP = cep => cep?.replace(/\D/g,'').replace(/(\d{5})(\d{3})/, '$1-$2') || '';
 const formatarTelefone = tel => {
