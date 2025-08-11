@@ -1,0 +1,380 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: #ecf0f1;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.tab-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    background: white;
+    padding: 25px;
+    border-radius: 0 5px 5px 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-container {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 220px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+button[type="submit"] {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+table th {
+    background: #3498db;
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table tr:hover {
+    background-color: #f1f8fe;
+}
+
+#alunosTable td:nth-child(2),
+#alunosTable td:nth-child(3),
+#alunosTable td:nth-child(5),
+#alunosTable td:nth-child(7),
+#alunosTable td:nth-child(12),
+#alunosTable td:nth-child(13) {
+    min-width: 100px;
+    max-width: 120px;
+    word-break: break-word;
+}
+
+#instrutoresTable td:nth-child(5),
+#instrutoresTable td:nth-child(6),
+#instrutoresTable td:nth-child(10),
+#instrutoresTable td:nth-child(11) {
+    min-width: 100px;
+    max-width: 120px;
+}
+
+.actions {
+    white-space: nowrap;
+    text-align: center;
+    min-width: 150px;
+}
+
+.actions button {
+    margin: 2px 4px;
+    padding: 8px 14px;
+    font-size: 13px;
+    min-width: 70px;
+    width: auto;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-edit {
+    background: #f39c12;
+    color: white;
+    border: none;
+}
+
+.btn-edit:hover {
+    background: #e67e22;
+}
+
+.btn-delete, .btn-cancelar {
+    background: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.btn-delete:hover, .btn-cancelar:hover {
+    background: #c0392b;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 36px;
+}
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c62828;
+    font-size: 15px;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #2e7d32;
+    font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+    
+    #alunosTable, #instrutoresTable, #cursosTable, #matriculasTable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .form-row .form-group {
+        min-width: 100%;
+    }
+    
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    table th, table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .actions button {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-content.active {
+    animation: fadeIn 0.3s ease-out;
+}
+
+a, button, input, select, textarea {
+    &:focus {
+        outline: 2px solid #3498db;
+        outline-offset: 2px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 10px;
+}
+
+.btn-edit-curso {
+    background: #f39c12;
+    color: white;
+    border: none;
+}
+
+.btn-edit-curso:hover {
+    background: #e67e22;
+}
+
+.btn-delete-curso {
+    background: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.btn-delete-curso:hover {
+    background: #c0392b;
+}
