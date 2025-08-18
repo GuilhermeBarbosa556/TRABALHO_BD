@@ -359,19 +359,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const instrutor = await response.json();
 
+                // Funções auxiliares de formatação
+                const formatarCPF = (cpf) => {
+                    if (!cpf) return '';
+                    cpf = cpf.replace(/\D/g, '');
+                    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                };
+
+                const formatarCEP = (cep) => {
+                    if (!cep) return '';
+                    cep = cep.replace(/\D/g, '');
+                    return cep.replace(/(\d{5})(\d{3})/, '$1-$2');
+                };
+
+                const formatarTelefone = (tel) => {
+                    if (!tel) return '';
+                    tel = tel.replace(/\D/g, '');
+                    if (tel.length === 11) {
+                        return tel.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                    } else if (tel.length === 10) {
+                        return tel.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+                    }
+                    return tel;
+                };
+
                 // Preenche o formulário com os dados do instrutor
                 document.getElementById('instrutorNome').value = instrutor.nome || '';
                 document.getElementById('instrutorDataNascimento').value = instrutor.dataNascimento ? instrutor.dataNascimento.split('T')[0] : '';
-                document.getElementById('instrutorCpf').value = instrutor.cpf || '';
+                document.getElementById('instrutorCpf').value = formatarCPF(instrutor.cpf) || '';
                 document.getElementById('instrutorRg').value = instrutor.rg || '';
                 document.getElementById('instrutorEspecialidade').value = instrutor.especialidade || '';
                 document.getElementById('instrutorFormacao').value = instrutor.formacao || '';
                 document.getElementById('instrutorEmail').value = instrutor.email || '';
-                document.getElementById('instrutorTelefone').value = instrutor.telefone || '';
+                document.getElementById('instrutorTelefone').value = formatarTelefone(instrutor.telefone) || '';
 
                 // Preenche endereço
                 const endereco = instrutor.endereco || {};
-                document.getElementById('instrutorCep').value = endereco.cep || '';
+                document.getElementById('instrutorCep').value = formatarCEP(endereco.cep) || '';
                 document.getElementById('instrutorRua').value = endereco.rua || '';
                 document.getElementById('instrutorNumero').value = endereco.numero || '';
                 document.getElementById('instrutorComplemento').value = endereco.complemento || '';
